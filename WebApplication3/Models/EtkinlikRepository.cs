@@ -65,6 +65,14 @@ namespace WebApplication3.Models
                 EtkinlikTuru = EtkinlikTuru.Sinema,
                 AltTur = "komedi"
             });
+            Etkinlikler.Add(new Etkinlik
+            {
+                Adi = "Sinema6",
+                BaslangicTarihi = DateTime.Now,
+                BitisTarihi = DateTime.Now.AddDays(10),
+                EtkinlikTuru = EtkinlikTuru.Sinema,
+                AltTur = "komedi"
+            });
 
             //Tiyatro
             Etkinlikler.Add(new Etkinlik
