@@ -19,14 +19,5 @@ namespace WebApplication3
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
-
-        public void Application_EndRequest()
-        {
-            var streamReader = new StreamReader(HttpContext.Current.Response.OutputStream);
-            var content = streamReader.ReadToEnd();
-
-            content.Replace("</body>", "<div>Footer</div></body>");
-            HttpContext.Current.Response.Output.Write(content);
-        }
     }
 }
