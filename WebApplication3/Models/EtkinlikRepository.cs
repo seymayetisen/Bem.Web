@@ -18,7 +18,8 @@ namespace WebApplication3.Models
                 Adi = "Sinema1",
                 BaslangicTarihi = DateTime.Now,
                 BitisTarihi = DateTime.Now.AddDays(10),
-                EtkinlikTuru = EtkinlikTuru.Sinema
+                EtkinlikTuru = EtkinlikTuru.Sinema,
+                alttur="komedi"
             });
 
             Etkinlikler.Add(new Etkinlik
@@ -26,14 +27,16 @@ namespace WebApplication3.Models
                 Adi = "Sinema2",
                 BaslangicTarihi = DateTime.Now.AddDays(-10),
                 BitisTarihi = DateTime.Now.AddDays(-5),
-                EtkinlikTuru = EtkinlikTuru.Sinema
+                EtkinlikTuru = EtkinlikTuru.Sinema,
+                alttur = "dram"
             });
             Etkinlikler.Add(new Etkinlik
             {
                 Adi = "Sinema3",
                 BaslangicTarihi = DateTime.Now,
                 BitisTarihi = DateTime.Now.AddDays(10),
-                EtkinlikTuru = EtkinlikTuru.Sinema
+                EtkinlikTuru = EtkinlikTuru.Sinema,
+                alttur = "aksiyon"
             });
 
             //Tiyatro
@@ -58,6 +61,30 @@ namespace WebApplication3.Models
                 BaslangicTarihi = DateTime.Now,
                 BitisTarihi = DateTime.Now.AddDays(10),
                 EtkinlikTuru = EtkinlikTuru.Tiyatro
+            });
+
+            //Music
+            Etkinlikler.Add(new Etkinlik
+            {
+                Adi = "music1",
+                BaslangicTarihi = DateTime.Now,
+                BitisTarihi = DateTime.Now.AddDays(10),
+                EtkinlikTuru = EtkinlikTuru.Muzik
+            });
+
+            Etkinlikler.Add(new Etkinlik
+            {
+                Adi = "music2",
+                BaslangicTarihi = DateTime.Now.AddDays(2),
+                BitisTarihi = DateTime.Now.AddDays(20),
+                EtkinlikTuru = EtkinlikTuru.Muzik
+            });
+            Etkinlikler.Add(new Etkinlik
+            {
+                Adi = "music3",
+                BaslangicTarihi = DateTime.Now,
+                BitisTarihi = DateTime.Now.AddDays(10),
+                EtkinlikTuru = EtkinlikTuru.Muzik
             });
 
             return Etkinlikler;
