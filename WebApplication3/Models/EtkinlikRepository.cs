@@ -19,7 +19,7 @@ namespace WebApplication3.Models
                 BaslangicTarihi = DateTime.Now,
                 BitisTarihi = DateTime.Now.AddDays(10),
                 EtkinlikTuru = EtkinlikTuru.Sinema,
-                alttur="komedi"
+                AltTur = "korku"
             });
 
             Etkinlikler.Add(new Etkinlik
@@ -28,7 +28,7 @@ namespace WebApplication3.Models
                 BaslangicTarihi = DateTime.Now.AddDays(-10),
                 BitisTarihi = DateTime.Now.AddDays(-5),
                 EtkinlikTuru = EtkinlikTuru.Sinema,
-                alttur = "dram"
+                AltTur = "korku"
             });
             Etkinlikler.Add(new Etkinlik
             {
@@ -36,7 +36,34 @@ namespace WebApplication3.Models
                 BaslangicTarihi = DateTime.Now,
                 BitisTarihi = DateTime.Now.AddDays(10),
                 EtkinlikTuru = EtkinlikTuru.Sinema,
-                alttur = "aksiyon"
+                AltTur = "dram"
+            });
+
+            Etkinlikler.Add(new Etkinlik
+            {
+                Adi = "Sinema4",
+                BaslangicTarihi = DateTime.Now,
+                BitisTarihi = DateTime.Now.AddDays(10),
+                EtkinlikTuru = EtkinlikTuru.Sinema,
+                AltTur = "romantik"
+            });
+
+            Etkinlikler.Add(new Etkinlik
+            {
+                Adi = "Sinema5",
+                BaslangicTarihi = DateTime.Now,
+                BitisTarihi = DateTime.Now.AddDays(10),
+                EtkinlikTuru = EtkinlikTuru.Sinema,
+                AltTur = "dram"
+            });
+
+            Etkinlikler.Add(new Etkinlik
+            {
+                Adi = "Sinema6",
+                BaslangicTarihi = DateTime.Now,
+                BitisTarihi = DateTime.Now.AddDays(10),
+                EtkinlikTuru = EtkinlikTuru.Sinema,
+                AltTur = "komedi"
             });
 
             //Tiyatro
@@ -45,7 +72,8 @@ namespace WebApplication3.Models
                 Adi = "Tiyatro1",
                 BaslangicTarihi = DateTime.Now,
                 BitisTarihi = DateTime.Now.AddDays(10),
-                EtkinlikTuru = EtkinlikTuru.Tiyatro
+                EtkinlikTuru = EtkinlikTuru.Tiyatro,
+                AltTur = "genel"
             });
 
             Etkinlikler.Add(new Etkinlik
@@ -53,38 +81,43 @@ namespace WebApplication3.Models
                 Adi = "Tiyatro2",
                 BaslangicTarihi = DateTime.Now.AddDays(2),
                 BitisTarihi = DateTime.Now.AddDays(20),
-                EtkinlikTuru = EtkinlikTuru.Tiyatro
+                EtkinlikTuru = EtkinlikTuru.Tiyatro,
+                AltTur = "genel"
             });
             Etkinlikler.Add(new Etkinlik
             {
                 Adi = "Tiyatro3",
                 BaslangicTarihi = DateTime.Now,
                 BitisTarihi = DateTime.Now.AddDays(10),
-                EtkinlikTuru = EtkinlikTuru.Tiyatro
+                EtkinlikTuru = EtkinlikTuru.Tiyatro,
+                AltTur = "genel"
             });
 
-            //Music
+            //Muzik
             Etkinlikler.Add(new Etkinlik
             {
-                Adi = "music1",
+                Adi = "Muzik1",
                 BaslangicTarihi = DateTime.Now,
                 BitisTarihi = DateTime.Now.AddDays(10),
-                EtkinlikTuru = EtkinlikTuru.Muzik
+                EtkinlikTuru = EtkinlikTuru.Muzik,
+                AltTur = "genel"
             });
 
             Etkinlikler.Add(new Etkinlik
             {
-                Adi = "music2",
+                Adi = "Muzik2",
                 BaslangicTarihi = DateTime.Now.AddDays(2),
                 BitisTarihi = DateTime.Now.AddDays(20),
-                EtkinlikTuru = EtkinlikTuru.Muzik
+                EtkinlikTuru = EtkinlikTuru.Muzik,
+                AltTur = "genel"
             });
             Etkinlikler.Add(new Etkinlik
             {
-                Adi = "music3",
+                Adi = "Muzik3",
                 BaslangicTarihi = DateTime.Now,
                 BitisTarihi = DateTime.Now.AddDays(10),
-                EtkinlikTuru = EtkinlikTuru.Muzik
+                EtkinlikTuru = EtkinlikTuru.Muzik,
+                AltTur = "genel"
             });
 
             return Etkinlikler;
