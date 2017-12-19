@@ -1,0 +1,130 @@
+body{
+    font-family:Arial;
+}
+
+h3{
+    font-size:12px;
+}
+
+#site {
+    width: 600px;
+    margin: 0 auto
+}
+
+a, a:active, a:visited{
+    text-decoration:none;
+    color:orangered;
+}
+
+#baslik .logo{
+    float:left;
+    width:100px;
+    margin-right:10px;
+}
+
+#baslik .logo img{
+    width:100px;
+}
+
+#baslik .ana-menu{
+    text-align:center;
+    background:#c0c0c0;
+}
+
+    #baslik .ana-menu ul {
+        margin:0;
+    padding:8px;
+    }
+
+        #baslik .ana-menu ul li{
+            display: inline-block;
+            list-style: none;
+            padding-right: 10px;
+        }
+#baslik .burc-menu {
+    background:#a0a0a0;
+    text-align:center;
+}
+#baslik .burc-menu ol {
+    margin: 0;
+    padding: 8px;
+}
+#baslik .burc-menu ol li {
+    display: inline-block;
+    list-style: none;
+    padding-right: 10px;
+}
+
+#baslik .burc-menu ol li img{
+    width:30px;
+}
+    #baslik .banner{
+    width:490px;
+    height:100px;
+    background:#ccc;
+    float:left;
+}
+
+    .burc-kutusu{
+        width:130px;
+        border:1px solid #b6ff00;
+        float:left;
+        margin-right:10px;
+        margin-bottom:15px;
+        height:215px;
+        font-size:10px;
+        padding:5px;
+        text-align:center;
+    }
+        .burc-kutusu p{
+            text-align:justify;
+        }
+        
+        .burc-kutusu:nth-child(4n+4) {
+            margin-right: 0;
+        }
+
+#yukselen-burc-yorumlari{
+    float:left;
+    width:456px;
+}
+#burc-tanitim img{
+    float:left;
+    
+}
+#burc-tanitim{
+    text-align:left;
+    font-size:15px;
+}
+.uyumlu {
+    width: 270px;
+    
+    float: left;
+    margin-right: auto;
+    margin-bottom: 15px;
+    font-size:15px;
+    background-color:gray;
+    text-align:justify;
+}
+.uyumsuz {
+    width: 270px;
+    float: right;
+    margin-right: auto;
+    margin-bottom: 15px;
+    font-size: 15px;
+    background-color: gray;
+    text-align: justify;
+}
+.uyumlu img {
+    float: left;
+    border-radius:95px;
+}
+.uyumsuz img {
+    float: left;
+    border-radius: 95px;
+}
+
+.liste{
+    overflow:hidden;
+}
+

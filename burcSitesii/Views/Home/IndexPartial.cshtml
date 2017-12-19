@@ -1,0 +1,17 @@
+﻿@model List<burcSitesii.Models.BurcKutusu>
+
+@foreach (var burc in Model)
+{
+    <div class="burc-kutusu">
+        <a href=@burc.adres>
+            <img src=@burc.ResimSRC />
+            <div>@burc.BurcIsmi</div>
+            <p>
+                @burc.Aciklama
+            </p>
+        </a>
+    </div>
+    
+}
+
+

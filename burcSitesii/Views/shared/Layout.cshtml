@@ -1,0 +1,112 @@
+﻿@model List<burcSitesii.Models.BurcKutusu>
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="content/style.css" />
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+
+    <style>
+        .degistir {
+            background-color: pink;
+        }
+
+        #liste {
+            /*display:none;*/
+        }
+    </style>
+</head>
+<body>
+    <div id="site">
+        <div id="baslik">
+            <div class="logo"><img src="img/logo.jpg" /></div>
+            <div class="banner"></div>
+            <div style="clear:both"></div>
+            <div class="ana-menu">
+                <ul>
+                    <li><a href="#gunluk-burc.html">Günlük Burç</a></li>
+                    <li><a href="#yukselen-burc.html">Yükselen Burç</a></li>
+                    <li><a href="#yillik-burc.html">Yıllık Burç</a></li>
+                    <li><a href="#aylik-burc.html">Aylık Burç</a></li>
+                </ul>
+            </div>
+            <div class="burc-menu">
+                <ol>
+                    <li><a href="#oglak.html"><img src="img/oglak.png" /></a></li>
+                    <li><a href="#kova.html"><img src="img/kova.png" /></a></li>
+                    <li><a href="#balık.html"><img src="img/balik.png" /></a></li>
+                    <li><a href="#boga.html"><img src="img/boga.png" /></a></li>
+                    <li><a href="#oglak.html"><img src="img/oglak.png" /></a></li>
+                    <li><a href="#kova.html"><img src="img/kova.png" /></a></li>
+                    <li><a href="#balık.html"><img src="img/balik.png" /></a></li>
+                    <li><a href="#boga.html"><img src="img/boga.png" /></a></li>
+                    <li><a href="#oglak.html"><img src="img/oglak.png" /></a></li>
+                    <li><a href="#kova.html"><img src="img/kova.png" /></a></li>
+                    <li><a href="#balık.html"><img src="img/balik.png" /></a></li>
+                    <li><a href="#boga.html"><img src="img/boga.png" /></a></li>
+
+                </ol>
+            </div>
+        </div>
+        <div id="gunluk-burc">
+            <h2>Günlük Burç Yorumları</h2>
+            <input type="button" name="name" value="sil" id="sil" />
+            <input type="button" name="name" value="sepet" id="sepet" />
+            <ul id="liste"></ul>
+            <div id="yorumlar">
+                @Html.Partial("~/Views/Home/IndexPartial.cshtml", Model)
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        @RenderBody()
+    </div>
+    <script>
+        $('.burc-kutusu').bind('click', function (arg) {
+            if ($(this).hasClass('degistir')) {
+                $(this).removeClass('degistir');
+            }
+            else {
+                var a = $(this).addClass('degistir');
+            }
+
+
+
+        });
+        $('#sil').bind('click', function () {
+            /*var a = $('.degistir .fiyat');
+            var topla = 0;
+            for (var i = 0; i < a.length; i++) {
+                topla = topla + parseInt(a[i].innerText);
+
+            }
+            alert(topla);
+            $('.degistir').remove();*/
+            var topla = 0;
+            $('.degistir .fiyat').each(function (i, element) {
+
+                topla = topla + parseInt(element.innerText);
+
+            });
+            alert(topla);
+            var a = $('.degistir .fiyat');
+            for (var i = 0; i < a.length; i++) {
+
+                var b = $('#liste').append('<li></li>');
+                b.innerText =b.text($(a)[i].innerText);
+
+            }
+
+            $('.degistir').remove();
+        });
+        $('#sepet').bind('click', function () {
+
+
+        });
+
+
+    </script>
+    
+</body>
+</html>

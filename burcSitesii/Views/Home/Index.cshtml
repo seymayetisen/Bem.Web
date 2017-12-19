@@ -1,0 +1,50 @@
+﻿@model List<burcSitesii.Models.BurcKutusu>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/shared/Layout.cshtml";
+    
+}
+
+<div id="yukselen">
+    <h2>Yükselen</h2>
+    <div id="yukselen-burc-yorumlari">
+        <h3>Yükselen Burç Yorumları</h3>
+        <div>
+@Html.Partial("~/Views/Home/IndexPartial.cshtml", Model)
+           
+        </div>
+        <div style="clear:both"></div>
+    </div>
+
+    <div id="yukselen-hesaplama">
+        <h3>Yükselen Burcunuzu Bulun</h3>
+        <div>
+            Doğdunuz
+            <div>
+                <label>Ay</label>
+                <select>
+                    <option value="1">Ocak</option>
+                    <option value="2">Şubat</option>
+                    <option value="3">Mart</option>
+                </select>
+            </div>
+            <div>
+                <label>Gün</label>
+                <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div>
+                <label>Saat</label>
+                <select>
+                    <option value="0-1">1-3</option>
+                    <option value="2-3">3-5 </option>
+                    <option value="4-5">5-7</option>
+                </select>
+            </div>
+            <button type="button">Yükselenimi Bul</button>
+        </div>
+    </div>
+</div>
