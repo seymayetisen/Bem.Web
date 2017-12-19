@@ -89,45 +89,59 @@ namespace WebApplication3.Controllers
             }
             return View("~/views/_shared/guncel.cshtml", sinemaListesi);
         }
-        public ActionResult bugun()
+        
+        public ActionResult Aralik(string tarih1,string tarih2)
         {
             var sinemaListesi = new List<Etkinlik>();
-            
 
             foreach (var sinema in EtkinlikRepository.ListeyiDoldur())
             {
-                if (sinema.BitisTarihi == DateTime.Now && sinema.EtkinlikTuru == EtkinlikTuru.Sinema)
+                if (sinema.EtkinlikTuru == EtkinlikTuru.Sinema && sinema.BaslangicTarihi <= DateTime.Parse(tarih1) && sinema.BitisTarihi >= DateTime.Parse(tarih2))
                 {
-
                     sinemaListesi.Add(sinema);
                 }
             }
-            
             return View("~/views/_shared/guncel.cshtml", sinemaListesi);
         }
-        public ActionResult buHafta()
-        {
-            return View("~/views/_shared/guncel.cshtml", Zmnfiltrele(DateTime.Now.AddDays(7)));
-        }
-        public ActionResult buay()
-        {
-            return View("~/views/_shared/guncel.cshtml", Zmnfiltrele(DateTime.Now.AddMonths(1)));
-        }
-        public List<Etkinlik> Zmnfiltrele(DateTime t)
-        {
-            var sinemaListesi = new List<Etkinlik>();
+        //public ActionResult bugun()
+        //{
+        //    var sinemaListesi = new List<Etkinlik>();
+            
 
-            foreach (var sinema in EtkinlikRepository.ListeyiDoldur())
-            {
-                if (sinema.BitisTarihi < t && sinema.EtkinlikTuru == EtkinlikTuru.Sinema)
-                {
+        //    foreach (var sinema in EtkinlikRepository.ListeyiDoldur())
+        //    {
+        //        if (sinema.BitisTarihi == DateTime.Now && sinema.EtkinlikTuru == EtkinlikTuru.Sinema)
+        //        {
 
-                    sinemaListesi.Add(sinema);
-                }
-            }
+        //            sinemaListesi.Add(sinema);
+        //        }
+        //    }
+            
+        //    return View("~/views/_shared/guncel.cshtml", sinemaListesi);
+        //}
+        //public ActionResult buHafta()
+        //{
+        //    return View("~/views/_shared/guncel.cshtml", Zmnfiltrele(DateTime.Now.AddDays(7)));
+        //}
+        //public ActionResult buay()
+        //{
+        //    return View("~/views/_shared/guncel.cshtml", Zmnfiltrele(DateTime.Now.AddMonths(1)));
+        //}
+        //public List<Etkinlik> Zmnfiltrele(DateTime t)
+        //{
+        //    var sinemaListesi = new List<Etkinlik>();
 
-            return sinemaListesi;
-        }
+        //    foreach (var sinema in EtkinlikRepository.ListeyiDoldur())
+        //    {
+        //        if (sinema.BitisTarihi < t && sinema.EtkinlikTuru == EtkinlikTuru.Sinema)
+        //        {
+
+        //            sinemaListesi.Add(sinema);
+        //        }
+        //    }
+
+        //    return sinemaListesi;
+        //}
         
        
 
