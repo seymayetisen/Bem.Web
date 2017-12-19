@@ -61,6 +61,15 @@ namespace WebApplication3.Models
             {
                 Adi = "Sinema6",
                 BaslangicTarihi = DateTime.Now,
+                BitisTarihi = DateTime.Now.AddMonths(10),
+                EtkinlikTuru = EtkinlikTuru.Sinema,
+                AltTur = "komedi"
+            });
+
+            Etkinlikler.Add(new Etkinlik
+            {
+                Adi = "Sinema7",
+                BaslangicTarihi = DateTime.Now.AddDays(2),
                 BitisTarihi = DateTime.Now.AddDays(10),
                 EtkinlikTuru = EtkinlikTuru.Sinema,
                 AltTur = "komedi"
