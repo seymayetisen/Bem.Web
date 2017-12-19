@@ -91,6 +91,7 @@ namespace WebApplication3.Controllers
 
             return sinemaListesi;
         }
+        
        
 
     }
