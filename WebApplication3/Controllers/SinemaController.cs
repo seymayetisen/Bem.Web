@@ -40,12 +40,6 @@ namespace WebApplication3.Controllers
             {
                 if (sinema.AltTur == tur && sinema.EtkinlikTuru == EtkinlikTuru.Sinema)
                 {
-
-                    //if (!hepsimi && sinema.BitisTarihi<DateTime.Now)
-                    //{
-                    //    continue;
-                    //}
-
                     sinemaListesi.Add(sinema);
                 }
             }
