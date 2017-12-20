@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "WebAppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewDemo", "ViewDemo\ViewDemo.csproj", "{F87B9D5A-697A-4881-98AF-4AD434BDBA0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sinav-test-uygulamasi", "sinav-test-uygulamasi\sinav-test-uygulamasi.csproj", "{48F13593-6255-473D-B180-4AC426E5A6D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F87B9D5A-697A-4881-98AF-4AD434BDBA0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F87B9D5A-697A-4881-98AF-4AD434BDBA0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F87B9D5A-697A-4881-98AF-4AD434BDBA0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F13593-6255-473D-B180-4AC426E5A6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F13593-6255-473D-B180-4AC426E5A6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F13593-6255-473D-B180-4AC426E5A6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F13593-6255-473D-B180-4AC426E5A6D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
