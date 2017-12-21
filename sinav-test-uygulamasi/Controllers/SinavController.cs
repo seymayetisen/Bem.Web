@@ -22,6 +22,24 @@ namespace sinav_test_uygulamasi.Controllers
                                     TcKimlikNo = "12345678912"
                                 };
             ViewBag.SinavAdi = sinavAdi;
+            foreach (var item in MvcApplication.Sonuclar)
+            {
+                if (item.Key ==sinavSonuc.Kisi.TcKimlikNo)
+                {
+                    break;
+                }
+                else
+                {
+                    MvcApplication.Sonuclar.Add(sinavSonuc.Kisi.TcKimlikNo, sinavSonuc);
+
+                }
+            }
+               
+
+            
+           
+           
+            
             return View(sinavSonuc);
         }
 
