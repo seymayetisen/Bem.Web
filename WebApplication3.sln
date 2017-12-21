@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "WebApplication3\WebApplication3.csproj", "{168894F7-58C8-4151-8089-FEEF3AE6D5E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewDemo", "ViewDemo\ViewDemo.csproj", "{F87B9D5A-697A-4881-98AF-4AD434BDBA0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "burcSitesii", "burcSitesii\burcSitesii.csproj", "{8DE22D16-F30B-44DE-A1A4-E50FA0AA376F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sinav-test-uygulamasi", "sinav-test-uygulamasi\sinav-test-uygulamasi.csproj", "{48F13593-6255-473D-B180-4AC426E5A6D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{F87B9D5A-697A-4881-98AF-4AD434BDBA0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F87B9D5A-697A-4881-98AF-4AD434BDBA0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F87B9D5A-697A-4881-98AF-4AD434BDBA0E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8DE22D16-F30B-44DE-A1A4-E50FA0AA376F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8DE22D16-F30B-44DE-A1A4-E50FA0AA376F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8DE22D16-F30B-44DE-A1A4-E50FA0AA376F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8DE22D16-F30B-44DE-A1A4-E50FA0AA376F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F13593-6255-473D-B180-4AC426E5A6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F13593-6255-473D-B180-4AC426E5A6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F13593-6255-473D-B180-4AC426E5A6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F13593-6255-473D-B180-4AC426E5A6D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
