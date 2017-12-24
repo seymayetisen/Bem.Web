@@ -1,6 +1,7 @@
 ﻿using sinav_test_uygulamasi.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -52,10 +53,35 @@ namespace sinav_test_uygulamasi.Controllers
             var sinav = SinavGetir();
             return Json(sinav, JsonRequestBehavior.AllowGet);
         }
+        private static string connStr = "Data Source=DESKTOP-SON6OA8;Initial Catalog=SinavUygulamasi;Integrated Security=True";
 
+        private static SqlConnection CreateConnection()
+        {
+            var connection = new SqlConnection(connStr);
+            connection.Open();
+
+            return connection;
+        }
         private static Sinav SinavGetir()
         {
-            var sinav = new Sinav
+        //    Sinav sinav = new Sinav();
+        //    using (SqlConnection conn=CreateConnection())
+        //    {
+        //        SqlCommand comm = new SqlCommand("select * from Sinav", conn);
+        //        using (SqlDataReader result=comm.ExecuteReader())
+        //        {
+        //            while (result.Read())
+        //            {
+        //                sinav.Baslik = $"{result["Baslik"].ToString()}";
+        //                sinav.Aciklama = $"{result["Aciklama"].ToString()}";
+        //                sinav.Sure = (int)result["Sure"];
+
+        //            }
+        //        }
+        //    }
+        //    return sinav;
+
+        var sinav = new Sinav
             {
                 Baslik = "Deneme Sınavı",
                 Aciklama = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu mattis lorem, ac iaculis elit. Nam et facilisis arcu. Suspendisse mollis quam quam, ac scelerisque urna viverra at. In eget consectetur lectus, sit amet consectetur orci. Fusce ullamcorper imperdiet quam iaculis hendrerit. Morbi ultricies facilisis purus, eget venenatis dui varius ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum convallis ligula, non iaculis lacus fringilla id.",
@@ -63,7 +89,7 @@ namespace sinav_test_uygulamasi.Controllers
                 Sorular = new List<Soru>()
             };
 
-            sinav.Sorular.Add(new Soru
+        sinav.Sorular.Add(new Soru
             {
                 Metin = "Dünya düz müdür?",
                 Secenekler = new List<string> { "Evet", "Hayır" },
