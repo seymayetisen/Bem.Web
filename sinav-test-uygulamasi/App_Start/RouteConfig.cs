@@ -30,7 +30,7 @@ namespace sinav_test_uygulamasi
                 name: "SinaviUygulamaSayfasi",
                 url: "sinav/{sinavadi}",
                 defaults: new { controller = "Sinav", action = "Index"}
-                ,constraints: new {sinavadi = @"(?!sorularigetir|cevapla|sinavlistesi|sinavdurumu).*" }
+                ,constraints: new {sinavadi = @"(?!sorularigetir|cevapla|sinavlistesi|sinavdurumu|SoruyaCevapVer).*" }
             );
 
             routes.MapRoute(
