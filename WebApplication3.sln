@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewDemo", "ViewDemo\ViewDe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sinav-test-uygulamasi", "sinav-test-uygulamasi\sinav-test-uygulamasi.csproj", "{48F13593-6255-473D-B180-4AC426E5A6D8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{8AF684BC-AE0B-4F73-ABD8-8429F33A2953}"
+	ProjectSection(SolutionItems) = preProject
+		Db.sql = Db.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
