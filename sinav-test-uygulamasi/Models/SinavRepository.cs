@@ -17,7 +17,7 @@ namespace sinav_test_uygulamasi.Models
 
             return sinavlar;
         }
-        private static string connStr = "Data Source=DESKTOP-SON6OA8;Initial Catalog=SinavUygulamasi;Integrated Security=True";
+        private static string connStr = "Data Source=DESKTOP-S3O5AOR;Initial Catalog=SinavUygulamasi;Integrated Security=True";
 
         private static SqlConnection CreateConnection()
         {
