@@ -28,6 +28,11 @@ namespace sinav_test_uygulamasi.Controllers
             return View();
         }
 
+        public ContentResult Mrb()
+        {
+            return Content("<h1>Merhaba</h1>");
+        }
+
         [HttpGet]
         public JsonResult Sinav()
         {

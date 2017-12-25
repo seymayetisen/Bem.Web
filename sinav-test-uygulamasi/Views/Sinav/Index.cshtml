@@ -1,20 +1,42 @@
-﻿@model sinav_test_uygulamasi.Models.SinavSonuc
+﻿@using System.Data.SqlClient
+@model sinav_test_uygulamasi.Models.SinavSonuc
 @{
     Layout = "~/views/shared/_layout.cshtml";
+
 }
-    <div id="sinav">
-        <div id="header">
-            <div id="kisi_bilgi">@Model.Kisi.Isim @Model.Kisi.Soyisim @Model.Kisi.TcKimlikNo</div>
-            <div id="sinav_bilgi">
-                <h1 id="baslik">@Model.Sinav.Baslik</h1>
-                <p id="aciklama">@Model.Sinav.Aciklama</p>
+
+@{
+
+    string connstr = "Data Source=DESKTOP-S3O5AOR;Initial Catalog=SinavYonetim;Integrated Security=True";
+    using (var connection = new SqlConnection(connstr))
+    {
+        var command = new SqlCommand("SELECT * FROM Exams WHERE Url = @url", connection);
+        command.Parameters.AddWithValue("@url", ViewBag.Url);
+        connection.Open();
+
+        using (var rdr = command.ExecuteReader())
+        {
+            rdr.Read();
+
+            
+            <div id="sinav">
+                <div id="header">
+                    <div id="kisi_bilgi"></div>
+                    <div id="sinav_bilgi">
+                        <h1 id="baslik">@rdr["title"]</h1>
+                        <p id="aciklama">@rdr["description"]</p>
+                    </div>
+                    <button id="baslat">BAŞLA</button><button id="bitir" disabled="disabled">BİTİR</button><span id="sayac"></span>
+                </div>
+                <ul id="sorular"></ul>
             </div>
-            <button id="baslat">BAŞLA</button><button id="bitir" disabled="disabled">BİTİR</button><span id="sayac"></span>
-        </div>
-        <ul id="sorular"></ul>
-    </div>
+        }
+    }
+}
 @section jss {
     <script>
+
+
         function sinavSorulariniOlustur(sorular) {
 
             function sorulariOlustur(sorular) {
@@ -201,7 +223,7 @@
         }
 
         if ($.cookie("sinavDevamEdiyorMu") === undefined) {
-            sinavSuresi = @Model.Sinav.Sure * 60;
+            sinavSuresi = 3600 * 60;
             $('#baslat').removeAttr('disabled');
             $('#bitir').attr("disabled","disabled");
         } else {
