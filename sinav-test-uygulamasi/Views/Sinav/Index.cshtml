@@ -3,6 +3,7 @@
     Layout = "~/views/shared/_layout.cshtml";
 
 }
+
             <div id="sinav" data-sinav-id="@Model.Sinav.Id">
                 <div id="header">
                     <div id="kisi_bilgi"></div>
@@ -176,7 +177,7 @@
             $(this).attr("disabled", "disabled");
             $('#bitir').removeAttr("disabled");
             sinavDevamEdiyorMu = true;
-            //sinavSorulariniGetir();
+            sinavSorulariniGetir();
             $.cookie("sinavDevamEdiyorMu", "true", { expires: 10 });
         });
 
@@ -186,20 +187,30 @@
         });
 
         function kayitliCevaplariGetir() {
-            var c = $.cookie("cevapla") || "[]";
-            //var cevapDizi = c.substring(1, c.length - 1).split("][");
-            var cevapDizi = JSON.parse(c);
-
-
-            for (var i = 0; i < cevapDizi.length; i++) {
-                if (cevapDizi[i] === undefined || cevapDizi[i] === null) {
-                    continue;
+            sinavSorulariniGetir();
+            $.ajax({
+                method: 'get',
+                url: '/sinav/Cevaplisorularigetir',
+                data: { sinavId: $("#sinav").data("sinav-id"),  },
+                success: function (a) {
+                    //sinavSorulariniOlustur(a);
                 }
+            })
+            //var c = $.cookie("cevapla") || "[]";
+            ////var cevapDizi = c.substring(1, c.length - 1).split("][");
+            //var cevapDizi = JSON.parse(c);
 
-                $('input[name="soru_' + i + '"][value="' + cevapDizi[i] + '"]').prop('checked', true);
-                //var cevapBirimleri = cevapDizi[i].split(      "=");
-                //$('input[name="soru_' + cevapBirimleri[0] + '"][value="' + cevapBirimleri[1] + '"]').prop('checked', true);
-            }
+
+            //for (var i = 0; i < cevapDizi.length; i++) {
+            //    if (cevapDizi[i] === undefined || cevapDizi[i] === null) {
+            //        continue;
+            //    }
+
+            //    $('input[name="soru_' + i + '"][value="' + cevapDizi[i] + '"]').prop('checked', true);
+            //    //var cevapBirimleri = cevapDizi[i].split(      "=");
+            //    //$('input[name="soru_' + cevapBirimleri[0] + '"][value="' + cevapBirimleri[1] + '"]').prop('checked', true);
+            //}
+
         }
 
         function sinaviBitir() {

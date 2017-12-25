@@ -70,7 +70,13 @@ namespace sinav_test_uygulamasi.Controllers
             return Json(sorular, JsonRequestBehavior.AllowGet);
 
         }
+        public JsonResult CevapliSorulariGetir(string sinavAdi)
+                {
+                    List<Soru> sorular = SinavRepository.SinavaAitSorulariGetir(sinavAdi);
 
+                    return Json(sorular, JsonRequestBehavior.AllowGet);
+
+                }
         public JsonResult SoruyaCevapVer(int sinavId, int soruId, int secenekId)
         {
             var result = SinavRepository.SoruyaCevapVer(sinavId, soruId, secenekId, 1);
@@ -89,7 +95,7 @@ namespace sinav_test_uygulamasi.Controllers
         {
             var examList = new List<Sinav>();
 
-            string connstr = "Data Source=DESKTOP-S3O5AOR;Initial Catalog=SinavYonetim;Integrated Security=True";
+            string connstr = "Data Source=DESKTOP-SON6OA8;Initial Catalog=SinavYonetim;Integrated Security=True";
 
 
             using (var connection = new SqlConnection(connstr))

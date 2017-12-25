@@ -60,7 +60,7 @@ namespace sinav_test_uygulamasi.Models
 
         internal static List<Soru> SinavaAitSorulariGetir(string sinavAdi)
         {
-            using (var conn = new SqlConnection("Data Source=DESKTOP-S3O5AOR;Initial Catalog=SinavYonetim;Integrated Security=True"))
+            using (var conn = new SqlConnection("Data Source=DESKTOP-SON6OA8;Initial Catalog=SinavYonetim;Integrated Security=True"))
             {
                 var command = new SqlCommand("SELECT * FROM Questions as q WHERE q.SinavId IN(SELECT e.Id  FROM[SinavYonetim].[dbo].[Exams] as e  WHERE e.Url = @url)", conn);
                 command.Parameters.AddWithValue("@url", sinavAdi);
@@ -145,7 +145,7 @@ namespace sinav_test_uygulamasi.Models
         {
             var sinav = new Sinav();
 
-            string connstr = "Data Source=DESKTOP-S3O5AOR;Initial Catalog=SinavYonetim;Integrated Security=True";
+            string connstr = "Data Source=DESKTOP-SON6OA8;Initial Catalog=SinavYonetim;Integrated Security=True";
             using (var connection = new SqlConnection(connstr))
             {
                 var command = new SqlCommand("SELECT * FROM Exams WHERE Url = @url", connection);
@@ -165,7 +165,7 @@ namespace sinav_test_uygulamasi.Models
 
         public static bool SoruyaCevapVer(int sinavId, int soruId, int secenekId, int kullaniciId)
         {
-            string connstr = "Data Source=DESKTOP-S3O5AOR;Initial Catalog=SinavYonetim;Integrated Security=True";
+            string connstr = "Data Source=DESKTOP-SON6OA8;Initial Catalog=SinavYonetim;Integrated Security=True";
             using (var connection = new SqlConnection(connstr))
             {
                 var command = new SqlCommand("SELECT Id FROM Answers WHERE PersonId = @pId AND QuestionId= @qId AND ExamId = @eId", connection);

@@ -12,7 +12,7 @@ namespace sinav_test_uygulamasi.Controllers
     {
         internal Sinav SinavBul(string url)
         {
-            string connstr = "Data Source=DESKTOP-S3O5AOR;Initial Catalog=SinavYonetim;Integrated Security=True";
+            string connstr = "Data Source=DESKTOP-SON6OA8;Initial Catalog=SinavYonetim;Integrated Security=True";
             using (var connection = new SqlConnection(connstr))
             {
                 var command = new SqlCommand("SELECT * FROM Exams WHERE Url = @url", connection);
