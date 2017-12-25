@@ -143,6 +143,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\SinavController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -202,6 +203,8 @@
     <Content Include="Views\Sinav\Index.cshtml" />
     <Content Include="Views\Sinav\SorulariGetir.cshtml" />
     <Content Include="Views\Sinav\SinavListesi.cshtml" />
+    <Content Include="Views\Sinav\SinavDurumu.cshtml" />
+    <Content Include="Views\Person\PersonsExams.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

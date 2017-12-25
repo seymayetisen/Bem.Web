@@ -59,5 +59,11 @@ namespace sinav_test_uygulamasi.Controllers
         {
             return View();
         }
+
+
+        public ActionResult SinavDurumu()
+        {
+            return View();
+        }
     }
 }
