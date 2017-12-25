@@ -28,6 +28,11 @@ namespace sinav_test_uygulamasi.Controllers
             return View();
         }
 
+        public ContentResult Mrb()
+        {
+            return Content("<h1>Merhaba</h1>");
+        }
+
         [HttpGet]
         public JsonResult Sinav()
         {
@@ -63,32 +68,32 @@ namespace sinav_test_uygulamasi.Controllers
                 Sorular = new List<Soru>()
             };
 
-            sinav.Sorular.Add(new Soru
-            {
-                Metin = "Dünya düz müdür?",
-                Secenekler = new List<string> { "Evet", "Hayır" },
-                DogruCevap = 0,
-                Puan = 10,
-                Sira = 1
-            });
+            //sinav.Sorular.Add(new Soru
+            //{
+            //    Metin = "Dünya düz müdür?",
+            //    Secenekler = new List<string> { "Evet", "Hayır" },
+            //    DogruCevap = 0,
+            //    Puan = 10,
+            //    Sira = 1
+            //});
 
-            sinav.Sorular.Add(new Soru
-            {
-                Metin = "Ay dünyanın uydusu mudur?",
-                Secenekler = new List<string> { "Evet", "Hayır" },
-                DogruCevap = 0,
-                Puan = 10,
-                Sira = 1
-            });
+            //sinav.Sorular.Add(new Soru
+            //{
+            //    Metin = "Ay dünyanın uydusu mudur?",
+            //    Secenekler = new List<string> { "Evet", "Hayır" },
+            //    DogruCevap = 0,
+            //    Puan = 10,
+            //    Sira = 1
+            //});
 
-            sinav.Sorular.Add(new Soru
-            {
-                Metin = "Javascript en iyi programlama dilidir?",
-                Secenekler = new List<string> { "Evet", "Hayır" },
-                DogruCevap = 1,
-                Puan = 10,
-                Sira = 1
-            });
+            //sinav.Sorular.Add(new Soru
+            //{
+            //    Metin = "Javascript en iyi programlama dilidir?",
+            //    Secenekler = new List<string> { "Evet", "Hayır" },
+            //    DogruCevap = 1,
+            //    Puan = 10,
+            //    Sira = 1
+            //});
 
             return sinav;
         }

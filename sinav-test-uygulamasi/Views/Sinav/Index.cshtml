@@ -1,33 +1,37 @@
 ﻿@model sinav_test_uygulamasi.Models.SinavSonuc
 @{
     Layout = "~/views/shared/_layout.cshtml";
+
 }
-    <div id="sinav">
-        <div id="header">
-            <div id="kisi_bilgi">@Model.Kisi.Isim @Model.Kisi.Soyisim @Model.Kisi.TcKimlikNo</div>
-            <div id="sinav_bilgi">
-                <h1 id="baslik">@Model.Sinav.Baslik</h1>
-                <p id="aciklama">@Model.Sinav.Aciklama</p>
+            <div id="sinav" data-sinav-id="@Model.Sinav.Id">
+                <div id="header">
+                    <div id="kisi_bilgi"></div>
+                    <div id="sinav_bilgi">
+                        <h1 id="baslik">@Model.Sinav.Baslik</h1>
+                        <p id="aciklama">@Model.Sinav.Aciklama</p>
+                    </div>
+                    <button id="baslat">BAŞLA</button><button id="bitir" disabled="disabled">BİTİR</button><span id="sayac"></span>
+                </div>
+                <ul id="sorular"></ul>
             </div>
-            <button id="baslat">BAŞLA</button><button id="bitir" disabled="disabled">BİTİR</button><span id="sayac"></span>
-        </div>
-        <ul id="sorular"></ul>
-    </div>
+       
 @section jss {
     <script>
+
+
         function sinavSorulariniOlustur(sorular) {
 
             function sorulariOlustur(sorular) {
                 for (var i = 0; i < sorular.length; i++) {
                     var soru = sorular[i];
-                    var soruLi = $('<li id="' + i + '"></li>');
+                    var soruLi = $('<li id="' + soru.Id + '"></li>');
                     soruLi.append(soru.Metin);
 
                     soruLi.appendTo('#sorular');
                     var cevapUl = $('<ul></ul>');
 
                     for (var j = 0; j < soru.Secenekler.length; j++) {
-                        $('<li><input value="' + j + '" type="radio" name="soru_' + i + '">' + '<label>' + soru.Secenekler[j] + '</label><div class="check"><div class="inside"></div></div></li>').appendTo(cevapUl);
+                        $('<li><input value="' + soru.Secenekler[j].Id + '" type="radio" name="soru_' + soru.Id + '">' + '<label>' + soru.Secenekler[j].Text + '</label><div class="check"><div class="inside"></div></div></li>').appendTo(cevapUl);
                     }
 
                     cevapUl.appendTo(soruLi);
@@ -41,14 +45,24 @@
                     input.checked = true;
                     //console.log($(this).siblings('input')[0])
 
-                    var kacinciSoru = parseInt($(input).attr("name").split('_')[1]);
-                    var kacinciSecenek = parseInt($(input).val());
+                    var sinavId = $("#sinav").data("sinav-id");
+                    var soruId = parseInt($(input).attr("name").split('_')[1]);
+                    var secenekId = parseInt($(input).val());
 
-                    var eskiCevapMetin = $.cookie("cevapla") || "[]";
-                    var cevapDizi = JSON.parse(eskiCevapMetin);
+                    $.ajax({
+                        url: '/sinav/SoruyaCevapVer',
+                        method: 'post',
+                        data: { sinavId: sinavId, secenekId: secenekId, soruId: soruId },
+                        success: function (data) {
+                            console.log(data);
+                        }
+                    });
 
-                    cevapDizi[kacinciSoru] = kacinciSecenek;
-                    $.cookie("cevapla", JSON.stringify(cevapDizi), {expires: 7});
+                    //var eskiCevapMetin = $.cookie("cevapla") || "[]";
+                    //var cevapDizi = JSON.parse(eskiCevapMetin);
+
+                    //cevapDizi[kacinciSoru] = kacinciSecenek;
+                    //$.cookie("cevapla", JSON.stringify(cevapDizi), {expires: 7});
 
 
                     //if ($.cookie("cevapla") != undefined) {
@@ -162,7 +176,7 @@
             $(this).attr("disabled", "disabled");
             $('#bitir').removeAttr("disabled");
             sinavDevamEdiyorMu = true;
-            sinavSorulariniGetir();
+            //sinavSorulariniGetir();
             $.cookie("sinavDevamEdiyorMu", "true", { expires: 10 });
         });
 
@@ -202,7 +216,7 @@
         }
 
         if ($.cookie("sinavDevamEdiyorMu") === undefined) {
-            sinavSuresi = @Model.Sinav.Sure * 60;
+            sinavSuresi = 3600 * 60;
             $('#baslat').removeAttr('disabled');
             $('#bitir').attr("disabled","disabled");
         } else {

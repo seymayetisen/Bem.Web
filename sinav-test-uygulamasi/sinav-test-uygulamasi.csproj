@@ -142,12 +142,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\SinavController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Kisi.cs" />
+    <Compile Include="Models\Secenek.cs" />
     <Compile Include="Models\Sinav.cs" />
     <Compile Include="Models\SinavRepository.cs" />
     <Compile Include="Models\SinavSonuc.cs" />
@@ -201,9 +204,15 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Sinav\Index.cshtml" />
     <Content Include="Views\Sinav\SorulariGetir.cshtml" />
+    <Content Include="Views\Sinav\SinavListesi.cshtml" />
+    <Content Include="Views\Sinav\SinavDurumu.cshtml" />
+    <Content Include="Views\Person\PersonsExams.cshtml" />
+    <Content Include="Views\Person\PersonsExamsWithoutDb.cshtml" />
+    <Content Include="Views\Shared\ExamList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
