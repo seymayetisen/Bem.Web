@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_shared.cshtml";
+}
+
+<h2>Index</h2>
+
+<div id="bir"></div>
+<div id="iki"></div>
+<input type="text" id="url" />
+<button id="req1">Req1</button>
+
+<script src="~/Content/jquery-1.10.2.min.js"></script>
+<script>
+    $('#req1').on('click', function () {
+        $.ajax({
+            url: $('#url').val(),
+            method: 'get',
+            success: function (d) {
+               // $('#bir').html(d);
+                console.log(d);
+                console.log(d.Name);
+            }
+        });
+    });
+
+</script>

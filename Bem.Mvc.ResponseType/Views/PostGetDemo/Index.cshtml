@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <input type="text" id="url" />
+    <input type="text" id="name" />
+    <button id="req1">Req1</button>
+    <select id="method">
+        <option value="get">GET</option>
+        <option value="post">POST</option>
+    </select>
+    <div id="result"></div>
+    <script src="~/Content/jquery-1.10.2.min.js"></script>
+    <script>
+        $('#req1').on('click', function () {
+            $.ajax({
+                url: $('#url').val(),
+                method: $('#method').val(),
+                data: { name: $('#name').val()},
+                success: function (d) {
+                    $('#result').html(JSON.stringify(d));
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
