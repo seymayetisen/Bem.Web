@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+	<style>
+        body {
+            font-family: Arial;
+        }
+    </style>
+	<script>alert('[sayfaAdi]');</script>
+</head>
+<body>
+<h1>Content</h1>
+  orhan
+  [dön]
+  5
+  deneme
+  [/dön]
+</body>
+</html>
