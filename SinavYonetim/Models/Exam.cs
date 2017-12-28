@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SinavYonetim.Models
 {
@@ -14,5 +16,8 @@ namespace SinavYonetim.Models
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public List<Question> Questions { get; set; }
+        public List<PersonsExam> PersonExam { get; set; }
+
     }
+    
 }

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SinavYonetim.Models
 {
-    public class SinavYonetimDbContext: DbContext
+    public class SinavYonetimDbContext : DbContext
     {
         public DbSet<Person> Person { get; set; }
         public DbSet<Exam> Exam { get; set; }
@@ -14,21 +14,46 @@ namespace SinavYonetim.Models
         public DbSet<Option> Option { get; set; }
         public DbSet<Answer> Answer { get; set; }
         public DbSet<PersonsExam> PersonExam { get; set; }
+        public DbSet<Demo> Demo { get; set; }
 
-        public SinavYonetimDbContext():base("Data Source=DESKTOP-S3O5AOR;Initial Catalog=CihaninDatabesi;Integrated Security=True")
+        public Person Person2 { get; set; }
+
+        public string UserName { get; set; }
+        public string Password { get; set; }
+
+        public SinavYonetimDbContext() : base("Data Source=DESKTOP-S3O5AOR;Initial Catalog=CihaninDatabesi;user id=orhan; password=321654;Integrated Security=True")
         {
             Database.SetInitializer<SinavYonetimDbContext>(new DbInitializer());
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Exam>().ToTable("Sinav");
+            modelBuilder.Entity<Person>().ToTable("Kisi");
+
+            modelBuilder.Entity<Demo>().Property(d => d.Ad).HasColumnName("Na  me");
+            modelBuilder.Entity<Demo>().Property(d => d.Ad).HasColumnType("varchar");
+            modelBuilder.Entity<Demo>().Property(d => d.Ad).HasMaxLength(15);
+
+            modelBuilder.Entity<Demo>()
+                .Property(d => d.BirincilAnahtar)
+                .HasColumnOrder(2);
+
+
+            modelBuilder.Entity<Demo>().HasKey(t => t.BirincilAnahtar);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
     }
 
-public class DbInitializer : DropCreateDatabaseAlways<SinavYonetimDbContext>
+    public class DbInitializer : DropCreateDatabaseAlways<SinavYonetimDbContext>
     {
         protected override void Seed(SinavYonetimDbContext context)
         {
             var p1 = new Person
             {
-                Isim = "Orhan",
+                Name = "Orhan",
                 Surname = "Aygün",
                 IdentityNumber = "12345678978",
                 UserName = "orhan",
@@ -37,7 +62,7 @@ public class DbInitializer : DropCreateDatabaseAlways<SinavYonetimDbContext>
 
             var p2 = new Person
             {
-                Isim = "Ahmet",
+                Name = "Ahmet",
                 Surname = "Mehmet",
                 IdentityNumber = "12345678978",
                 UserName = "ahmet",
@@ -46,7 +71,7 @@ public class DbInitializer : DropCreateDatabaseAlways<SinavYonetimDbContext>
 
             var p3 = new Person
             {
-                Isim = "Oya",
+                Name = "Oya",
                 Surname = "Rıza",
                 IdentityNumber = "12345678978",
                 UserName = "ali",
