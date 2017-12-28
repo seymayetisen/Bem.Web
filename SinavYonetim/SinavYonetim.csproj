@@ -111,6 +111,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\Demo.cs" />
     <Compile Include="Models\Exam.cs" />
     <Compile Include="Models\Option.cs" />
     <Compile Include="Models\Person.cs" />

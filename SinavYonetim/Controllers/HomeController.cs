@@ -22,7 +22,7 @@ namespace SinavYonetim.Controllers
         public ActionResult FilteredResult(string name)
         {
             var context = new SinavYonetimDbContext();
-            var personList = context.Person.Where(p=> p.Isim.Contains(name)).ToList();
+            var personList = context.Person.Where(p=> p.Name.Contains(name)).ToList();
 
             return View("~/views/home/index.cshtml",personList);
         }
