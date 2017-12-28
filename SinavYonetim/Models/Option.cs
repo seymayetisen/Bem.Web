@@ -6,7 +6,6 @@ namespace SinavYonetim.Models
     public class Option
     {
         public int Id { get; set; }
-        [Required]
         public string Text { get; set; }
         //[InverseProperty("Options")]
         public Question ParentQuestion { get; set; }

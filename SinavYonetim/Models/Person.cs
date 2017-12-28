@@ -17,7 +17,6 @@ namespace SinavYonetim.Models
         public string Email { get; set; }
         public string IdentityNumber { get; set; }
         public List<PersonsExam> PersonExam { get; set; }
-        [NotMapped]
         public string FullName { get; set; }
     }
 }
