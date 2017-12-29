@@ -6,7 +6,7 @@ using System.Web;
 
 namespace SinavYonetim.Models
 {
-    public class SinavYonetimDbContext: DbContext
+    public class SinavYonetimDbContext : DbContext
     {
         public DbSet<Person> Person { get; set; }
         public DbSet<Exam> Exam { get; set; }
@@ -28,6 +28,20 @@ namespace SinavYonetim.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Exam>().ToTable("Sinav");
+            modelBuilder.Entity<Person>().ToTable("Kisi");
+
+            modelBuilder.Entity<Demo>().Property(d => d.Ad).HasColumnName("Na  me");
+            modelBuilder.Entity<Demo>().Property(d => d.Ad).HasColumnType("varchar");
+            modelBuilder.Entity<Demo>().Property(d => d.Ad).HasMaxLength(15);
+
+            modelBuilder.Entity<Demo>()
+                .Property(d => d.BirincilAnahtar)
+                .HasColumnOrder(2);
+
+
+            modelBuilder.Entity<Demo>().HasKey(t => t.BirincilAnahtar);
+
             base.OnModelCreating(modelBuilder);
         }
 

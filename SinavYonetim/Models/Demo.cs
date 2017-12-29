@@ -8,9 +8,10 @@ namespace SinavYonetim.Models
 {
     public class Demo
     {
-        [Key]
         public int BirincilAnahtar { get; set; }
         public string Ad { get; set; }
         public string Soyad { get; set; }
+
+      
     }
 }
