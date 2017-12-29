@@ -13,8 +13,8 @@ namespace codeFirst.Controllers
         public ActionResult Index()
         {
             var context = new OTODbContext();
-            List<Buses> Buses = context.Buses.ToList();
-            return View();
+            List<Buses> Busess = context.Buses.ToList();
+            return View(Busess);
         }
     }
 }

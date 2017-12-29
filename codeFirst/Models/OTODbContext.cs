@@ -15,7 +15,7 @@ namespace codeFirst.Models
         public DbSet<BusSefer> BusSefer { get; set; }
         public DbSet<BusStation> BusStation { get; set; }
 
-        public OTODbContext() : base("Data Source=DESKTOP-SON6OA8;Initial Catalog=Oto;Integrated Security=True")
+        public OTODbContext() : base("Data Source=DESKTOP-S3O5AOR;Initial Catalog=Oto;Integrated Security=True")
         {
             Database.SetInitializer<OTODbContext>(new DbInitializer());
         }
