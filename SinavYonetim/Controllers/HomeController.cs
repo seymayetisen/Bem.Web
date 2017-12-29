@@ -15,6 +15,7 @@ namespace SinavYonetim.Controllers
         {
             var context = new SinavYonetimDbContext();
             var personList = new List<Person>();
+            
 
             int s1 = 5;
             int s2 = 7;

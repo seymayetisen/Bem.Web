@@ -110,6 +110,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712290825059_ekleme.cs" />
+    <Compile Include="Migrations\201712290825059_ekleme.Designer.cs">
+      <DependentUpon>201712290825059_ekleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Demo.cs" />
     <Compile Include="Models\Exam.cs" />
@@ -135,6 +140,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712290825059_ekleme.resx">
+      <DependentUpon>201712290825059_ekleme.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

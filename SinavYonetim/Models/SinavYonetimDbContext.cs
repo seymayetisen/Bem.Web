@@ -23,7 +23,9 @@ namespace SinavYonetim.Models
 
         public SinavYonetimDbContext() : base("Data Source=DESKTOP-S3O5AOR;Initial Catalog=CihaninDatabesi;user id=orhan; password=321654;Integrated Security=True")
         {
-            Database.SetInitializer<SinavYonetimDbContext>(new DbInitializer());
+           // Database.SetInitializer<SinavYonetimDbContext>(new DbInitializer()); 
+            Database.SetInitializer<SinavYonetimDbContext>(new MigrateDatabaseToLatestVersion<SinavYonetimDbContext,SinavYonetim.Migrations.Configuration>());
+
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

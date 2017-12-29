@@ -18,5 +18,6 @@ namespace SinavYonetim.Models
         public string IdentityNumber { get; set; }
         public List<PersonsExam> PersonExam { get; set; }
         public string FullName { get; set; }
+        public string Address { get; set; }
     }
 }
