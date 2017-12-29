@@ -57,6 +57,11 @@ namespace sinav_test_uygulamasi.Controllers
                 TcKimlikNo = "12345678912"
             };
             ViewBag.SinavAdi = sinavAdi;
+            var list = new List<int> { 1, 2, 3 };
+            var dizi=new int[]{ 1, 2, 3 };
+
+           
+            
 
 
             //return Content(JsonConvert.SerializeObject(sinavSonuc));
